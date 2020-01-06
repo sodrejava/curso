@@ -2,18 +2,24 @@ package com.sodre.sodre.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table (name="tb_categoria")
 public class Categoria implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="co_categoria")
 	private Integer id;
+	
+	@Column(name="ds_nome")
 	private String nome;
 	
 	public Categoria() {

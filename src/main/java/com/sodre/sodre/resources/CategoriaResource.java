@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sodre.sodre.domain.Categoria;
 import com.sodre.sodre.services.CategoriaService;
 
 @RestController
-@RequestMapping(value = "categorias")
+@RequestMapping(value = "/categorias")
 public class CategoriaResource {
 	
 	@Autowired
 	private CategoriaService categoriaSvc;
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		categoriaSvc.buscar(id);
+		Categoria rs = categoriaSvc.buscar(id);
+		return ResponseEntity.ok().body(rs);
 	}
 }
