@@ -27,4 +27,9 @@ public class CategoriaService {
 	public Categoria gravar(Categoria categoria) {
 		return repo.save(categoria);
 	}
+	
+	public void deletar(Integer id) {
+		System.out.println(id);
+		repo.deleteById(id);
+	}
 }
