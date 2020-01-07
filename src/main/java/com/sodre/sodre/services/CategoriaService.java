@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.sodre.sodre.domain.Categoria;
 import com.sodre.sodre.repositories.CategoriaRepository;
+import com.sodre.sodre.services.exceptions.ObjectNotFountException;
 
 @Service
 public class CategoriaService {
@@ -17,6 +18,11 @@ public class CategoriaService {
 	
 	public Categoria buscarPorId(Integer id) {
 		Optional<Categoria> categoria = repo.findById(id);
+		
+		categoria.orElseThrow(() -> new ObjectNotFountException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()
+		));
+		
 		return categoria.orElse(null);
 	}
 	
@@ -29,7 +35,6 @@ public class CategoriaService {
 	}
 	
 	public void deletar(Integer id) {
-		System.out.println(id);
 		repo.deleteById(id);
 	}
 }
