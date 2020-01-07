@@ -24,7 +24,7 @@ public class CategoriaService {
 		return repo.findAll();
 	}
 	
-	public void gravar(Categoria categoria) {
-		repo.save(categoria);
+	public Categoria gravar(Categoria categoria) {
+		return repo.save(categoria);
 	}
 }

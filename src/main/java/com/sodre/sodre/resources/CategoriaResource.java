@@ -1,5 +1,7 @@
 package com.sodre.sodre.resources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,9 +30,9 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(rs);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public void gravar(@RequestBody Categoria categoria) {
-		categoriaSvc.gravar(categoria);
+	@RequestMapping(method=RequestMethod.POST)
+	public Categoria gravar(@RequestBody Categoria categoria) {
+		return categoriaSvc.gravar(categoria);
 	}
 	
 

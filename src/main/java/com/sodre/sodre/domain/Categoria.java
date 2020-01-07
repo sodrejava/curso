@@ -28,9 +28,9 @@ public class Categoria implements Serializable{
 	@Column(name="ds_nome")
 	private String nome;
 	
-	@JsonManagedReference
-	@ManyToMany(mappedBy = "categorias")
-	private List<Produto> produtos = new ArrayList<>();
+//	@JsonManagedReference
+//	@ManyToMany(mappedBy = "categorias")
+//	private List<Produto> produtos = new ArrayList<>();
 	
 	public Categoria() {
 		
@@ -58,13 +58,13 @@ public class Categoria implements Serializable{
 		this.nome = nome;
 	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
-	}
+//	public List<Produto> getProdutos() {
+//		return produtos;
+//	}
+//
+//	public void setProdutos(List<Produto> produtos) {
+//		this.produtos = produtos;
+//	}
 	
 	@Override
 	public int hashCode() {

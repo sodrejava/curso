@@ -13,18 +13,16 @@ import com.sodre.sodre.repositories.CategoriaRepository;
 import com.sodre.sodre.repositories.ProdutoRepository;
 
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class Application { //implements CommandLineRunner {
 
-	@Autowired
-	private CategoriaRepository categoriaRepository;
+	//@Autowired
+	//private CategoriaRepository categoriaRepository;
 	
-	@Autowired
-	private ProdutoRepository produtoRepository;
+	//@Autowired
+	//private ProdutoRepository produtoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-
-	
 
 }
