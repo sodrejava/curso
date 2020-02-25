@@ -29,7 +29,6 @@ public class CategoriaService {
 	}
 	
 	public void deletar(Integer id) {
-		System.out.println(id);
 		repo.deleteById(id);
 	}
 }
